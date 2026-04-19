@@ -156,6 +156,8 @@ newsletter:
 collections:
   books:
     output: false
+  music:
+    output: true
   news:
     defaults:
       layout: post
@@ -270,6 +272,13 @@ jekyll-archives:
       categories: "/blog/:type/:name/"
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+  music:
+    enabled: [year, tags, categories, release_types]
+    permalinks:
+      year: "/:collection/:year/"
+      tags: "/:collection/:type/:name/"
+      categories: "/:collection/:type/:name/"
+      release_types: "/:collection/:type/:name/"
 
 display_tags: [] # these tags will be displayed on the front page of your blog
 display_categories: [] # these categories will be displayed on the front page of your blog

@@ -1,0 +1,101 @@
+---
+layout: page
+---
+{{ content }}
+
+{% if page.collection and page.collection.size > 0 %}
+  {% assign collection = site[page.collection] | sort: 'date' | reverse %}
+  {% if collection and collection.size > 0 %}
+    {% for item in collection %}
+      {% assign current_year = item.date | date: '%Y' %}
+      {% assign album_art = item.album_art | default: item.cover | default: item.img %}
+      {% if current_year != year %}
+        {% unless forloop.first %}
+          </div>
+        {% endunless %}
+        <h1 id="y{{ item.date | date: '%Y' }}">
+          <a href="{{ current_year | prepend: '/music/' | relative_url }}">{{ current_year }}</a>
+        </h1>
+        <div class="music-grid">
+          {% assign year = current_year %}
+      {% endif %}
+
+      <article class="music-card">
+        <a class="music-card-link" href="{{ item.url | relative_url }}">
+          {% if album_art %}
+            <img alt="{{ item.title }} album art" src="{{ album_art | relative_url }}">
+          {% else %}
+            <div class="music-card-fallback">
+              <i class="fa-solid fa-music"></i>
+            </div>
+          {% endif %}
+          <div class="music-card-copy">
+            <h2>{{ item.title }}</h2>
+            {% if item.artist %}
+              <p>{{ item.artist }}</p>
+            {% endif %}
+            {% if item.release_types or item.release_type %}
+              <span class="music-card-type">{{ item.release_types | default: item.release_type | replace: ' ', ' / ' | upcase }}</span>
+            {% endif %}
+          </div>
+        </a>
+      </article>
+
+      {% if forloop.last %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endif %}
+
+<style>
+  .music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .music-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .music-card img,
+  .music-card-fallback {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 12%);
+  }
+
+  .music-card-fallback {
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    background: linear-gradient(135deg, rgb(127 127 127 / 12%), rgb(127 127 127 / 4%));
+  }
+
+  .music-card-copy {
+    padding-top: 0.85rem;
+  }
+
+  .music-card-copy h2 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .music-card-copy p,
+  .music-card-type {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.9rem;
+  }
+
+  .music-card-type {
+    letter-spacing: 0.04em;
+  }
+</style>

@@ -1,0 +1,236 @@
+---
+layout: default
+---
+{% assign review_year = page.date | date: '%Y' %}
+{% assign tags = page.tags | join: '' %}
+{% assign categories = page.categories | join: '' %}
+{% assign release_types = page.release_types | default: page.release_type %}
+{% assign album_art = page.album_art | default: page.cover | default: page.img %}
+{% assign spotify_embed_type = page.spotify_embed_type | default: 'album' %}
+
+{% if page._styles %}
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<div class="post music-review">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.artist or page.released %}
+      <p class="post-meta">
+        {% if page.artist %}
+          {{ page.artist }}
+        {% endif %}
+        {% if page.artist and page.released %}
+          &nbsp;&middot;&nbsp;
+        {% endif %}
+        {% if page.released %}
+          {{ page.released }}
+        {% endif %}
+      </p>
+    {% endif %}
+
+    {% assign has_meta_row = false %}
+    {% if page.date or page.label or page.runtime or page.rating or page.lastfm_url or page.spotify_embed_url or page.spotify_id %}
+      {% assign has_meta_row = true %}
+    {% endif %}
+    {% if has_meta_row %}
+      <p class="post-meta">
+        {% if page.date %}
+          <i class="fa-solid fa-pen fa-sm" style="color: var(--global-theme-color) !important"></i>
+          <em>{{ page.date | date: '%-d %B %Y' }}</em>
+        {% endif %}
+        {% if page.label %}
+          {% if page.date %}
+            &nbsp;&middot;&nbsp;
+          {% endif %}
+          <i class="fa-solid fa-record-vinyl fa-sm"></i> {{ page.label }}
+        {% endif %}
+        {% if page.runtime %}
+          {% if page.date or page.label %}
+            &nbsp;&middot;&nbsp;
+          {% endif %}
+          <i class="fa-regular fa-clock fa-sm"></i> {{ page.runtime }}
+        {% endif %}
+        {% if page.rating %}
+          {% if page.date or page.label or page.runtime %}
+            &nbsp;&middot;&nbsp;
+          {% endif %}
+          {% assign full_stars = page.rating | floor %}
+          {% assign half_star = page.rating | minus: full_stars %}
+          {% assign empty_stars = 5 | minus: full_stars %}
+          {% if half_star > 0 %}
+            {% assign empty_stars = empty_stars | minus: 1 %}
+          {% endif %}
+          {% for i in (1..full_stars) -%}
+            <i class="fa-solid fa-star fa-sm"></i>
+          {%- endfor -%}
+          {%- if half_star > 0 %}<i class="fa-solid fa-star-half-stroke fa-sm"></i>{% endif -%}
+          {%- for i in (1..empty_stars) -%}
+            <i class="fa-regular fa-star fa-sm"></i>
+          {%- endfor -%}
+        {% endif %}
+        {% if page.lastfm_url %}
+          {% if page.date or page.label or page.runtime or page.rating %}
+            &nbsp;&middot;&nbsp;
+          {% endif %}
+          <a href="{{ page.lastfm_url }}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-lastfm fa-sm"></i> Last.fm
+          </a>
+        {% endif %}
+        {% if page.spotify_embed_url or page.spotify_id %}
+          {% if page.date or page.label or page.runtime or page.rating or page.lastfm_url %}
+            &nbsp;&middot;&nbsp;
+          {% endif %}
+          <a href="{% if page.spotify_url %}{{ page.spotify_url }}{% elsif page.spotify_embed_url %}{{ page.spotify_embed_url | replace: '/embed', '' }}{% else %}https://open.spotify.com/{{ spotify_embed_type }}/{{ page.spotify_id }}{% endif %}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-spotify fa-sm"></i> Spotify
+          </a>
+        {% endif %}
+      </p>
+    {% endif %}
+
+    <p class="post-tags">
+      <a href="{{ review_year | prepend: '/music/' | relative_url }}">
+        <i class="fa-solid fa-calendar fa-sm"></i> {{ review_year }}
+      </a>
+      {% if release_types %}
+        {% assign page_release_types = release_types | split: ' ' %}
+        &nbsp;&middot;&nbsp;
+        {% for release_type in page_release_types %}
+          <a href="{{ release_type | slugify | prepend: '/music/release_types/' | relative_url }}">
+            <i class="fa-solid fa-compact-disc fa-sm"></i> {{ release_type | upcase }}
+          </a>
+          {% unless forloop.last %}
+            &nbsp;
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+      {% if tags != '' %}
+        &nbsp;&middot;&nbsp;
+        {% for tag in page.tags %}
+          <a href="{{ tag | slugify | prepend: '/music/tag/' | relative_url }}">
+            <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
+          </a>
+          {% unless forloop.last %}
+            &nbsp;
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+      {% if categories != '' %}
+        &nbsp;&middot;&nbsp;
+        {% for category in page.categories %}
+          <a href="{{ category | slugify | prepend: '/music/category/' | relative_url }}">
+            <i class="fa-solid fa-tag fa-sm"></i> {{ category }}
+          </a>
+          {% unless forloop.last %}
+            &nbsp;
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+    </p>
+    <hr>
+  </header>
+
+  <article class="music-review-body">
+    {% if album_art %}
+      <figure class="music-review-art">
+        <img alt="{{ page.title }} album art" src="{{ album_art | relative_url }}">
+        <figcaption>
+          Artwork for <em>{{ page.title }}</em>
+        </figcaption>
+      </figure>
+    {% endif %}
+
+    {% if page.spotify_embed_url or page.spotify_id %}
+      <div class="music-review-embed">
+        <iframe
+          title="Spotify embed for {{ page.title }}"
+          src="{% if page.spotify_embed_url %}{{ page.spotify_embed_url }}{% else %}https://open.spotify.com/embed/{{ spotify_embed_type }}/{{ page.spotify_id }}?utm_source=generator{% endif %}"
+          loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        ></iframe>
+      </div>
+    {% endif %}
+
+    {% if page.favorite_tracks %}
+      {% assign favorite_tracks = page.favorite_tracks %}
+      {% unless favorite_tracks.first %}
+        {% assign favorite_tracks = favorite_tracks | split: '|' %}
+      {% endunless %}
+      <div class="music-review-panel">
+        <strong>Favorite tracks</strong>
+        <ul>
+          {% for track in favorite_tracks %}
+            <li>{{ track | strip }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% if content != '' %}
+      {{ content }}
+    {% endif %}
+  </article>
+
+  {% if site.giscus and page.giscus_comments %}
+    {% include giscus.liquid %}
+  {% endif %}
+</div>
+
+<style>
+  .music-review-body::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .music-review-art {
+    margin: 0 auto 1.5rem;
+    max-width: 340px;
+  }
+
+  .music-review-art img {
+    display: block;
+    width: 100%;
+    border-radius: 0.4rem;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 18%);
+  }
+
+  .music-review-art figcaption {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .music-review-embed {
+    margin: 0 0 1.5rem;
+  }
+
+  .music-review-embed iframe {
+    width: 100%;
+    min-height: 352px;
+    border: 0;
+    border-radius: 12px;
+  }
+
+  .music-review-panel {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.75rem;
+    background: rgb(127 127 127 / 4%);
+  }
+
+  .music-review-panel ul {
+    margin: 0.75rem 0 0;
+  }
+
+  @media screen and (min-width: 800px) {
+    .music-review-art {
+      float: right;
+      width: 320px;
+      margin: 0 0 1.5rem 2rem;
+    }
+  }
+</style>
