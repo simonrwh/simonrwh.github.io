@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
+        },{id: "nav-music",
+          title: "music",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/music/";
+          },
         },{id: "post-welcome-to-jekyll",
         
           title: "Welcome to Jekyll!",
@@ -49,7 +56,12 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
-      },{
+      },{id: "music-blue-train",
+          title: 'Blue Train',
+          description: "",
+          section: "Music",handler: () => {
+              window.location.href = "/music/2026-04-19-blue-train/";
+            },},{
       id: 'light-theme',
       title: 'Change theme to light',
       description: 'Change the theme of the site to Light',
