@@ -7,7 +7,7 @@ released: 2023
 label: Carbon Copy
 runtime: 22 min
 rating: 3.5
-release_types: EP
+release_type: EP
 categories: indie rock
 tags: dummy basement
 album_art: /assets/img/5.jpg

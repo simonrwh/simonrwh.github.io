@@ -7,7 +7,7 @@ released: 2019
 label: Door Frame
 runtime: 50 min
 rating: 4
-release_types: Live
+release_type: Live
 categories: rock live
 tags: dummy concert
 album_art: /assets/img/6.jpg

@@ -7,7 +7,7 @@ released: 2025
 label: Fence Post
 runtime: 3 min
 rating: 3
-release_types: Single
+release_type: Single
 categories: rock garage
 tags: dummy raw
 album_art: /assets/img/2.jpg

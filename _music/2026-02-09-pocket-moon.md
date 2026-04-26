@@ -7,7 +7,7 @@ released: 2025
 label: Index Small
 runtime: 17 min
 rating: 3
-release_types: EP
+release_type: EP
 categories: folk chamber-pop
 tags: dummy soft
 album_art: /assets/img/6.jpg

@@ -7,7 +7,7 @@ released: 1957
 label: Blue Note
 runtime: 42 min
 rating: 4.5
-release_types: LP
+release_type: LP
 categories: jazz hard-bop
 tags: favorite saxophone
 album_art: /assets/img/12.jpg

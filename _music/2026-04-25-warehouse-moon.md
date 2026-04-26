@@ -7,7 +7,7 @@ released: 2023
 label: Floor Plan
 runtime: 18 min
 rating: 3.5
-release_types: EP
+release_type: EP
 categories: techno house
 tags: dummy club
 album_art: /assets/img/6.jpg

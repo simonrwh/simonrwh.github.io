@@ -7,7 +7,7 @@ released: 2024
 label: Floor Number
 runtime: 5 min
 rating: 3
-release_types: Single
+release_type: Single
 categories: electronic house
 tags: dummy lift
 album_art: /assets/img/12.jpg

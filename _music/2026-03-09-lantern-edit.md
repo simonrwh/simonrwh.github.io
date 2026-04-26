@@ -7,7 +7,7 @@ released: 2024
 label: Revision One
 runtime: 8 min
 rating: 3.5
-release_types: Single Remix
+release_type: Single Remix
 categories: house dance
 tags: dummy remix
 album_art: /assets/img/10.jpg

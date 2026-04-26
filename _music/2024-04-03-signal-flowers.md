@@ -7,7 +7,7 @@ released: 2021
 label: Green Wire
 runtime: 43 min
 rating: 4
-release_types: LP
+release_type: LP
 categories: ambient field-recording
 tags: dummy pastoral
 album_art: /assets/img/3.jpg

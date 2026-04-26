@@ -7,7 +7,7 @@ released: 2026
 label: City Minute
 runtime: 3 min
 rating: 2.5
-release_types: Single
+release_type: Single
 categories: pop indie
 tags: dummy bright
 album_art: /assets/img/8.jpg

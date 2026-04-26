@@ -7,7 +7,7 @@ released: 2020
 label: Contact Sheet
 runtime: 44 min
 rating: 4
-release_types: LP
+release_type: LP
 categories: post-punk gothic
 tags: dummy dark
 album_art: /assets/img/9.jpg

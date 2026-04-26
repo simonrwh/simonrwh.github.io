@@ -7,7 +7,7 @@ released: 2025
 label: Public Clock
 runtime: 66 min
 rating: 4
-release_types: Mixtape
+release_type: Mixtape
 categories: hip-hop soul
 tags: dummy warm
 album_art: /assets/img/10.jpg

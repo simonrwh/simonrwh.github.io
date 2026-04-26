@@ -7,7 +7,7 @@ released: 2025
 label: Front Step
 runtime: 19 min
 rating: 3.5
-release_types: EP
+release_type: EP
 categories: dream-pop shoegaze
 tags: dummy hazy
 album_art: /assets/img/6.jpg

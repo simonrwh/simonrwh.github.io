@@ -274,12 +274,12 @@ jekyll-archives:
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
   music:
-    enabled: [year, tags, categories, release_types]
+    enabled: [year, tags, categories, release_type]
     permalinks:
       year: "/:collection/:year/"
       tags: "/:collection/:type/:name/"
       categories: "/:collection/:type/:name/"
-      release_types: "/:collection/:type/:name/"
+      release_type: "/:collection/:type/:name/"
 
 display_tags: [] # these tags will be displayed on the front page of your blog
 display_categories: [] # these categories will be displayed on the front page of your blog

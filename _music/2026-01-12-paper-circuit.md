@@ -7,7 +7,7 @@ released: 2024
 label: Draft House
 runtime: 21 min
 rating: 4
-release_types: EP
+release_type: EP
 categories: indie electronic
 tags: dummy compact
 album_art: /assets/img/2.jpg

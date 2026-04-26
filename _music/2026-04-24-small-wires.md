@@ -7,7 +7,7 @@ released: 2021
 label: North Room
 runtime: 33 min
 rating: 2.5
-release_types: LP
+release_type: LP
 categories: folk lo-fi
 tags: dummy acoustic
 album_art: /assets/img/5.jpg

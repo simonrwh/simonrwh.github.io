@@ -7,7 +7,7 @@ released: 2024
 label: Timetable
 runtime: 29 min
 rating: 3
-release_types: EP
+release_type: EP
 categories: ambient minimal
 tags: dummy transit
 album_art: /assets/img/12.jpg

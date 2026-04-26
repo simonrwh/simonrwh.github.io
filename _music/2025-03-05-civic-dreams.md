@@ -7,7 +7,7 @@ released: 2021
 label: Public Works
 runtime: 63 min
 rating: 4
-release_types: Compilation
+release_type: Compilation
 categories: synth-pop new-wave
 tags: dummy archive
 album_art: /assets/img/3.jpg

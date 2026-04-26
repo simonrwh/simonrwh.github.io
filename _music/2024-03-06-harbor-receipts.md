@@ -7,7 +7,7 @@ released: 2018
 label: Wharf Archive
 runtime: 74 min
 rating: 4.5
-release_types: Compilation
+release_type: Compilation
 categories: soul funk
 tags: dummy archival
 album_art: /assets/img/1.jpg

@@ -7,7 +7,7 @@ released: 2020
 label: Hall Reverb
 runtime: 31 min
 rating: 3.5
-release_types: Mixtape
+release_type: Mixtape
 categories: dub reggae
 tags: dummy echo
 album_art: /assets/img/2.jpg

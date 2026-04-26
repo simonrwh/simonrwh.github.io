@@ -4,7 +4,6 @@ layout: default
 {% assign review_year = page.date | date: '%Y' %}
 {% assign tags = page.tags | join: '' %}
 {% assign categories = page.categories | join: '' %}
-{% assign release_types = page.release_types | default: page.release_type %}
 {% assign album_art = page.album_art | default: page.cover | default: page.img %}
 {% assign spotify_embed_type = page.spotify_embed_type | default: 'album' %}
 
@@ -94,17 +93,11 @@ layout: default
       <a href="{{ review_year | prepend: '/music/' | relative_url }}">
         <i class="fa-solid fa-calendar fa-sm"></i> {{ review_year }}
       </a>
-      {% if release_types %}
-        {% assign page_release_types = release_types | split: ' ' %}
+      {% if page.release_type %}
         &nbsp;&middot;&nbsp;
-        {% for release_type in page_release_types %}
-          <a href="{{ release_type | slugify | prepend: '/music/release_types/' | relative_url }}">
-            <i class="fa-solid fa-compact-disc fa-sm"></i> {{ release_type | upcase }}
-          </a>
-          {% unless forloop.last %}
-            &nbsp;
-          {% endunless %}
-        {% endfor %}
+        <a href="{{ page.release_type | slugify | prepend: '/music/release_type/' | relative_url }}">
+          <i class="fa-solid fa-compact-disc fa-sm"></i> {{ page.release_type }}
+        </a>
       {% endif %}
       {% if tags != '' %}
         &nbsp;&middot;&nbsp;

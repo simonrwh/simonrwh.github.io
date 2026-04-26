@@ -7,7 +7,7 @@ released: 2024
 label: Field Table
 runtime: 24 min
 rating: 4
-release_types: EP
+release_type: EP
 categories: ambient experimental
 tags: dummy quiet
 album_art: /assets/img/2.jpg

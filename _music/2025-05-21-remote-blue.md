@@ -7,7 +7,7 @@ released: 2025
 label: Distance Office
 runtime: 4 min
 rating: 2.5
-release_types: Single
+release_type: Single
 categories: pop electronic
 tags: dummy remote
 album_art: /assets/img/8.jpg

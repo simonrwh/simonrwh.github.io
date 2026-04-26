@@ -7,7 +7,7 @@ released: 2025
 label: Color Desk
 runtime: 40 min
 rating: 3.5
-release_types: LP
+release_type: LP
 categories: pop art-pop
 tags: dummy polished
 album_art: /assets/img/11.jpg

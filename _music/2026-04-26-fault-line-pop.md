@@ -7,7 +7,7 @@ released: 2026
 label: Practice Room
 runtime: 3 min
 rating: 3
-release_types: Single
+release_type: Single
 categories: pop guitar
 tags: dummy bright
 album_art: /assets/img/7.jpg

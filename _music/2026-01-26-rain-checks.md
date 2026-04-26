@@ -7,7 +7,7 @@ released: 2023
 label: Canal Copy
 runtime: 36 min
 rating: 3.5
-release_types: LP
+release_type: LP
 categories: rock indie
 tags: dummy guitar
 album_art: /assets/img/4.jpg

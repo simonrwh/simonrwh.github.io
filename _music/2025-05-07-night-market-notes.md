@@ -7,7 +7,7 @@ released: 2024
 label: Stall Five
 runtime: 55 min
 rating: 4
-release_types: Live
+release_type: Live
 categories: jazz fusion
 tags: dummy live
 album_art: /assets/img/7.jpg

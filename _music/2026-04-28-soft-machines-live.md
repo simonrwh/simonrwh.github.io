@@ -7,7 +7,7 @@ released: 2019
 label: Boot Room
 runtime: 58 min
 rating: 3.5
-release_types: Live
+release_type: Live
 categories: jazz fusion
 tags: dummy live
 album_art: /assets/img/9.jpg

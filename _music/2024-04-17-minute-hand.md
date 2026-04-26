@@ -7,7 +7,7 @@ released: 2024
 label: Second Mark
 runtime: 3 min
 rating: 2.5
-release_types: Single
+release_type: Single
 categories: punk power-pop
 tags: dummy fast
 album_art: /assets/img/4.jpg

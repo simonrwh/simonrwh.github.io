@@ -7,7 +7,7 @@ released: 2022
 label: Soft Focus
 runtime: 46 min
 rating: 4.5
-release_types: LP
+release_type: LP
 categories: singer-songwriter folk
 tags: dummy intimate
 album_art: /assets/img/1.jpg

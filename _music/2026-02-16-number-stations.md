@@ -7,7 +7,7 @@ released: 2021
 label: Receiver Club
 runtime: 68 min
 rating: 4
-release_types: Compilation
+release_type: Compilation
 categories: electronic archival
 tags: dummy compilation
 album_art: /assets/img/7.jpg

@@ -7,7 +7,7 @@ released: 2020
 label: White Ledger
 runtime: 47 min
 rating: 4.5
-release_types: LP
+release_type: LP
 categories: post-rock instrumental
 tags: dummy expansive
 album_art: /assets/img/8.jpg

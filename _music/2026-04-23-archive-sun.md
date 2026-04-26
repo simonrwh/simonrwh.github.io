@@ -7,7 +7,7 @@ released: 2022
 label: Long Shelf
 runtime: 71 min
 rating: 4
-release_types: Compilation
+release_type: Compilation
 categories: electronic downtempo
 tags: dummy compilation
 album_art: /assets/img/4.jpg

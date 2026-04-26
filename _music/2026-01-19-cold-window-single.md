@@ -7,7 +7,7 @@ released: 2026
 label: Test Press
 runtime: 4 min
 rating: 3
-release_types: Single
+release_type: Single
 categories: pop synth-pop
 tags: dummy single
 album_art: /assets/img/3.jpg

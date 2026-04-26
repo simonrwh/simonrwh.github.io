@@ -7,7 +7,7 @@ released: 2020
 label: Tape Floor
 runtime: 34 min
 rating: 3.5
-release_types: Mixtape
+release_type: Mixtape
 categories: lo-fi indie
 tags: dummy tape
 album_art: /assets/img/4.jpg

@@ -7,7 +7,7 @@ released: 2023
 label: Angle Label
 runtime: 48 min
 rating: 4
-release_types: LP
+release_type: LP
 categories: math-rock instrumental
 tags: dummy angular
 album_art: /assets/img/5.jpg

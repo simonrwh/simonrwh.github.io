@@ -7,7 +7,7 @@ released: 2022
 label: Open Window
 runtime: 42 min
 rating: 4
-release_types: LP
+release_type: LP
 categories: americana folk
 tags: dummy warm
 album_art: /assets/img/11.jpg
