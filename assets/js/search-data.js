@@ -215,7 +215,7 @@ ninja.data = [{
           title: 'Blue Train 2',
           description: "",
           section: "Music",handler: () => {
-              window.location.href = "/music/2026-04-26-blue-train%202/";
+              window.location.href = "/music/2026-04-26-blue-train-2/";
             },},{id: "music-neon-room",
           title: 'Neon Room',
           description: "",
@@ -241,26 +241,26 @@ ninja.data = [{
           description: "",
           section: "Music",handler: () => {
               window.location.href = "/music/2026-04-24-small-wires/";
-            },},{id: "music-warehouse-moon",
-          title: 'Warehouse Moon',
-          description: "",
-          section: "Music",handler: () => {
-              window.location.href = "/music/2026-04-25-warehouse-moon/";
-            },},{id: "music-fault-line-pop",
-          title: 'Fault Line Pop',
-          description: "",
-          section: "Music",handler: () => {
-              window.location.href = "/music/2026-04-26-fault-line-pop/";
             },},{id: "music-winter-index",
           title: 'Winter Index',
           description: "",
           section: "Music",handler: () => {
               window.location.href = "/music/2026-04-27-winter-index/";
+            },},{id: "music-warehouse-moon",
+          title: 'Warehouse Moon',
+          description: "",
+          section: "Music",handler: () => {
+              window.location.href = "/music/2026-04-25-warehouse-moon/";
             },},{id: "music-soft-machines-live",
           title: 'Soft Machines Live',
           description: "",
           section: "Music",handler: () => {
               window.location.href = "/music/2026-04-28-soft-machines-live/";
+            },},{id: "music-fault-line-pop",
+          title: 'Fault Line Pop',
+          description: "",
+          section: "Music",handler: () => {
+              window.location.href = "/music/2026-04-26-fault-line-pop/";
             },},{id: "music-radio-minutes",
           title: 'Radio Minutes',
           description: "",
