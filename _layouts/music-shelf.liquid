@@ -34,8 +34,8 @@ layout: page
             {% if item.artist %}
               <p>{{ item.artist }}</p>
             {% endif %}
-            {% if item.release_types or item.release_type %}
-              <span class="music-card-type">{{ item.release_types | default: item.release_type | replace: ' ', ' / ' | upcase }}</span>
+            {% if item.release_type %}
+              <span class="music-card-type">{{ item.release_type }}</span>
             {% endif %}
           </div>
         </a>
