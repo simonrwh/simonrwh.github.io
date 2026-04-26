@@ -2,7 +2,7 @@
 layout: music-review
 title: Winter Index
 artist: Luma Relay
-date: 2026-04-27
+date: 2026-04-24
 released: 2020
 label: White Ledger
 runtime: 47 min

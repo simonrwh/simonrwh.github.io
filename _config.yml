@@ -158,6 +158,7 @@ collections:
     output: false
   music:
     output: true
+    permalink: /music/:name/
   news:
     defaults:
       layout: post

@@ -2,7 +2,7 @@
 layout: music-review
 title: Soft Machines Live
 artist: Calder Avenue
-date: 2026-04-28
+date: 2026-04-25
 released: 2019
 label: Boot Room
 runtime: 58 min
