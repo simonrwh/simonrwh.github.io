@@ -2,7 +2,7 @@
 layout: music-shelf
 title: music
 permalink: /music/
-nav: true
+nav: false
 nav_order: 2
 collection: music
 ---
