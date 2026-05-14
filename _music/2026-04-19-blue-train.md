@@ -20,6 +20,7 @@ favorite_tracks:
   - Moment's Notice
   - Lazy Bird
 giscus_comments: false
+published: false
 ---
 
 Coltrane sounds fully locked in here: muscular without being crowded, melodic without softening the edges. The title track sets the tone immediately, and the rest of the record keeps that same sense of precision and motion.
