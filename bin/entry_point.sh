@@ -21,7 +21,11 @@ manage_gemfile_lock() {
 
 start_jekyll() {
     manage_gemfile_lock
-    bundle exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace --force_polling &
+    draft_args=()
+    if [[ "${JEKYLL_DRAFTS:-false}" == "true" ]]; then
+        draft_args+=(--drafts)
+    fi
+    bundle exec jekyll serve "${draft_args[@]}" --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace --force_polling &
 }
 
 start_jekyll
