@@ -216,6 +216,7 @@ plugins:
   - jekyll-3rd-party-libraries
   - jekyll-archives-v2
   - jekyll-cache-bust
+  - jekyll-compose
   - jekyll-email-protect
   - jekyll-feed
   - jekyll-get-json
@@ -233,6 +234,39 @@ plugins:
   - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
+
+jekyll_compose:
+  default_front_matter:
+    drafts:
+      layout: post
+      description:
+      categories:
+      tags:
+      related_posts: false
+    posts:
+      layout: post
+      description:
+      categories:
+      tags:
+      related_posts: false
+    music:
+      layout: music-review
+      artist:
+      released:
+      label:
+      runtime:
+      rating:
+      release_type:
+      categories:
+      tags:
+      album_art:
+      spotify_id:
+      spotify_embed_type: album
+      spotify_url:
+      lastfm_url:
+      favorite_tracks:
+      giscus_comments: false
+      published: false
 
 # Sitemap settings
 defaults:

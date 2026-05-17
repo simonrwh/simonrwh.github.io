@@ -310,6 +310,101 @@ For quick setup, see [QUICKSTART.md](QUICKSTART.md).
 
 Want to learn more about Jekyll? Check out [this tutorial](https://www.taniarascia.com/make-a-static-website-with-jekyll/). Why Jekyll? Read [Andrej Karpathy's blog post](https://karpathy.github.io/2014/07/01/switching-to-jekyll/)! Why write a blog? Read [Rachel Thomas blog post](https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045).
 
+## Composing content
+
+This site includes `jekyll-compose` for creating posts, drafts, pages, and collection entries from the command line. Type these commands in your host terminal from the repository root; Docker runs the Ruby/Jekyll command inside a temporary container, so you do not need a local Ruby setup.
+
+Run the site normally:
+
+```bash
+docker compose up
+```
+
+Run the site in the background and get your terminal back:
+
+```bash
+docker compose up -d
+```
+
+Stop the background site later:
+
+```bash
+docker compose down
+```
+
+Check whether it is running, or watch logs again:
+
+```bash
+docker compose ps
+docker compose logs -f
+```
+
+After adding or changing gems, rebuild the Docker image once:
+
+```bash
+docker compose up --build
+```
+
+Preview drafts locally:
+
+```bash
+docker compose up jekyll-drafts
+```
+
+Preview drafts in the background:
+
+```bash
+docker compose up -d jekyll-drafts
+```
+
+The `jekyll-drafts` service is optional and uses a Docker Compose `profile`, so plain `docker compose up` still starts only the normal non-draft site. When you name the service directly, Compose starts that optional service for you. Both services use port `8080`, so stop one with `docker compose down` before switching to the other.
+
+Build the site once with drafts included:
+
+```bash
+docker compose run --rm jekyll bundle exec jekyll build --drafts
+```
+
+Create a draft post in `_drafts`:
+
+```bash
+docker compose run --rm jekyll bundle exec jekyll draft "My Draft Title"
+```
+
+Create a dated blog post in `_posts`:
+
+```bash
+docker compose run --rm jekyll bundle exec jekyll post "My Post Title"
+```
+
+Publish a draft into `_posts`:
+
+```bash
+docker compose run --rm jekyll bundle exec jekyll publish _drafts/my-draft-title.md
+```
+
+Move a post back to `_drafts`:
+
+```bash
+docker compose run --rm jekyll bundle exec jekyll unpublish _posts/YYYY-MM-DD-my-post-title.md
+```
+
+Rename a draft or post:
+
+```bash
+docker compose run --rm jekyll bundle exec jekyll rename _drafts/my-draft-title.md "Better Title"
+```
+
+Create a music collection entry in `_music`:
+
+```bash
+docker compose run --rm jekyll bundle exec jekyll compose "Blue Train" --collection music
+```
+
+`docker compose run --rm` starts a temporary container for one command and removes that temporary container when the command finishes. `--rm` is not required, but it keeps old stopped one-off containers from piling up.
+
+Review generated front matter before publishing. Music entries use this site's `music-review` defaults, but fields such as artist, album art, streaming URLs, and favorite tracks still need to be filled in by hand.
+
 ## Installing and Deploying
 
 For installation and deployment details please refer to [INSTALL.md](INSTALL.md).

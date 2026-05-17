@@ -417,6 +417,27 @@ To create a new blog post, you can add a new Markdown file in the [\_posts](_pos
 
 If you want to create blog posts that are not ready to be published, but you want to track it with git, you can create a [\_drafts](https://jekyllrb.com/docs/posts/#drafts) directory and store them there.
 
+This site includes `jekyll-compose`, so you can create posts and drafts from Docker:
+
+```bash
+docker compose run --rm jekyll bundle exec jekyll draft "My Draft Title"
+docker compose run --rm jekyll bundle exec jekyll post "My Post Title"
+```
+
+Preview normal published posts with:
+
+```bash
+docker compose up
+```
+
+Preview drafts with the optional drafts service:
+
+```bash
+docker compose up jekyll-drafts
+```
+
+The drafts service uses a Docker Compose `profile`, so it does not start during plain `docker compose up`. Both services use `http://localhost:8080`; run `docker compose down` before switching between normal and draft preview modes.
+
 Note that `posts` is also a collection, but it is a default collection created automatically by Jekyll. To access the posts, you can use the `site.posts` variable in your templates.
 
 ## Creating new projects
