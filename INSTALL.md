@@ -83,19 +83,7 @@ docker compose up
 
 Note that when you run it for the first time, it will download a docker image of size 400MB or so. To see the template running, open your browser and go to `http://localhost:8080`. You should see a copy of the theme's demo website.
 
-Now, feel free to customize the theme however you like (don't forget to change the name!). Also, your changes should be automatically rendered in real-time (or maybe after a few seconds).
-
-To preview draft posts from `_drafts`, run the optional drafts service:
-
-```bash
-docker compose up jekyll-drafts
-```
-
-The `jekyll-drafts` service is defined with a Docker Compose `profile`, which means it does not start during plain `docker compose up`. It is only started when you name it directly, or when you explicitly enable the `drafts` profile. Since the normal and draft services both use `http://localhost:8080`, stop one before switching to the other:
-
-```bash
-docker compose down
-```
+Now, feel free to customize the theme however you like (don't forget to change the name!). Also, your changes should be automatically rendered in real-time (or maybe after a few seconds). For this site's custom draft preview and content creation workflow, see [simon-customized-readme.md](simon-customized-readme.md).
 
 > Beta: You can also use the slimmed docker image with a size below 100MBs and exact same functionality. Just use `docker compose -f docker-compose-slim.yml up`
 

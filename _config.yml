@@ -206,6 +206,7 @@ exclude:
   - purgecss.config.js
   - README.md
   - readme_preview/
+  - simon-customized-readme.md
   - vendor
 keep_files:
   - CNAME
